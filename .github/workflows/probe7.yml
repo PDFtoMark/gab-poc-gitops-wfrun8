@@ -1,0 +1,11 @@
+name: P7Qualified
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+    branches: ["Ety60:feature"]
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "P7Qualified TRIGGERED"
