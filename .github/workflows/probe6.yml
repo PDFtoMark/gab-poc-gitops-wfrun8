@@ -1,0 +1,11 @@
+name: P6RefsPull
+on:
+  workflow_run:
+    workflows: ["CI"]
+    types: [completed]
+    branches: ["refs/pull/*"]
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "P6RefsPull TRIGGERED"
